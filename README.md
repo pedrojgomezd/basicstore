@@ -1,5 +1,10 @@
 # Welcome to Basic Store
 ## Demo [Basicstore](https://basicstore.herokuapp.com)
+## Credentials
+|User|Password  |
+|--|--|
+| admin@basicstore.com | admin |
+
 ## Installation instruction
 
 #### Clone the repositories and install dependency
