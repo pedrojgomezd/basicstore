@@ -20,6 +20,9 @@ Route::group(['middleware' => 'auth:customer'], function () {
     Route::get('purchases/{purchase}', 'PurchaseController@show')->name('purchases.show');
     Route::post('purchases', 'PurchaseController@store')->name('purchases.store');
     Route::delete('purchases/{purchase}', 'PurchaseController@destroy')->name('purchases.destroy');
+
+    Route::post('payments/{purchase}', 'PaymentController@process')->name('payments.process');
+    Route::get('payments/response/{purchase}', 'PaymentController@response')->name('payments.response');
 });
 
 Route::group(['prefix' => 'admin'], function () {

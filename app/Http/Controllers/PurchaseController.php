@@ -29,7 +29,7 @@ class PurchaseController extends Controller
     {
         $purchase = $request->user()->purchases()->create([
             'description' => 'Luxury pocket watch',
-            'amount'      => 1200000,
+            'amount'      => 120000,
             'status'      => 'CREATED'
         ]);
 

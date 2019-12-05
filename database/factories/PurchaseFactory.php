@@ -9,8 +9,8 @@ use Faker\Generator as Faker;
 $factory->define(Purchase::class, function (Faker $faker) {
     return [
         'customer_id' => factory(Customer::class)->create()->id,
-        'request_id' => $faker->uuid,
-        'process_url' => env('APP_URL'),
+        'request_id' => null,
+        'process_url' => null,
         'status' => 'CREATED',
         'description' => $faker->text(20),
         'amount' => random_int(100, 250000)
