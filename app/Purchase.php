@@ -21,19 +21,12 @@ class Purchase extends Model
 
     public function getStatusColorAttribute()
     {
-        switch ($this->status) {
-            case 'CREATED':
-                return 'bg-warning';
-                break;
-            case 'PAYED':
-                return 'bg-success';
-                break;
-            case 'REJECTED':
-                return 'bg-danger';
-                break;            
-            default:
-                return 'bg-default';
-                break;
-        }
+        $colorForStatu = [
+            'CREATED' => 'bg-warning',
+            'PAYED' => 'bg-success',
+            'REJECTED' => 'bg-danger'
+        ];
+
+        return $colorForStatu[$this->status];
     }
 }
