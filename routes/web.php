@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::view('/','landing')->name('landing');
 
 Route::group(['middleware' => 'auth:customer'], function () {
     Route::get('purchases', 'PurchaseController@index')->name('purchases.index');
@@ -24,9 +22,3 @@ Route::group(['middleware' => 'auth:customer'], function () {
     Route::post('payments/{purchase}', 'PaymentController@process')->name('payments.process');
     Route::get('payments/response/{purchase}', 'PaymentController@response')->name('payments.response');
 });
-
-Route::group(['prefix' => 'admin'], function () {
-    Auth::routes(['register' => false]);    
-});
-
-Route::get('/home', 'HomeController@index')->name('home');

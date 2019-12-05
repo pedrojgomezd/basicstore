@@ -14,8 +14,8 @@ class CustomerTest extends TestCase
     public function routesThatRequireTheUserNotToBeAuthenticatedProvider()
     {
         return [
-            ['register', 'customer.car'],
-            ['customer.login', 'customer.car']
+            ['register', 'landing'],
+            ['customer.login', 'landing']
         ];
     }
     
@@ -49,7 +49,7 @@ class CustomerTest extends TestCase
             'password' => 'secret'
         ]);
 
-        $response->assertRedirect(route('customer.car'));
+        $response->assertRedirect(route('landing'));
 
     }
 
@@ -64,7 +64,7 @@ class CustomerTest extends TestCase
         ];
 
         $this->post(route('customer.register'), $userData)
-            ->assertRedirect(route('customer.car'));
+            ->assertRedirect(route('landing'));
         
         unset($userData['password']);
         unset($userData['password_confirmation']);

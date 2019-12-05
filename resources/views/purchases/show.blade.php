@@ -43,8 +43,4 @@
             </div>
         </div>
     </div>
-
-    <form action="" method="POST" id="form-pay">
-        @csrf
-    </form>
 @endsection

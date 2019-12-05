@@ -28,7 +28,7 @@ class PurchaseTest extends TestCase
         $this->assertDatabaseHas('purchases', [
             'customer_id' => $customer->id,
             'description' => 'Luxury pocket watch',
-            'amount'      => 1200000,
+            'amount'      => 120000,
             'status'      => 'CREATED'
         ]);
 
