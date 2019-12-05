@@ -49,6 +49,9 @@
                                 </li>
                             @endif
                         @else
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('purchases.index') }}">{{ __('Purchases') }}</a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::guard('customer')->user()->name }} <span class="caret"></span>
@@ -76,5 +79,8 @@
             @yield('content')
         </main>
     </div>
+    <form action="" method="POST" id="form-pay">
+        @csrf
+    </form>
 </body>
 </html>

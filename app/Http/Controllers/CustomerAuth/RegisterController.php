@@ -19,7 +19,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'car';
+    protected $redirectTo = '/';
 
     /**
      * Display a listing of the resource.

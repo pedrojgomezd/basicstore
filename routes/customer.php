@@ -7,5 +7,3 @@ Route::get('login', 'CustomerAuth\LoginController@showLoginForm')->middleware('g
 Route::post('login', 'CustomerAuth\LoginController@login')->name('login');
 
 Route::post('logout', 'CustomerAuth\LoginController@logout')->name('logout');
-
-Route::get('car', 'CustomerController@car')->name('customer.car');

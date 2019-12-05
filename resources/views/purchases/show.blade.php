@@ -23,7 +23,18 @@
                                     <td>{{ $purchase->description }}</td>
                                     <td>{{ $purchase->amount_format }}</td>
                                     <td>{{ $purchase->status }}</td>
-                                    <td></td>
+                                    <td>
+                                        @if($purchase->status != 'PAYED')
+                                            <button class="btn btn-success" onclick="
+                                                document.getElementById('form-pay').action = '{{ route('payments.process', ['purchase' => $purchase]) }}'
+                                                document.getElementById('form-pay').submit()
+                                            ">
+                                                Payment
+                                            </button>
+                                        @else
+                                            {{$purchase->status}}
+                                        @endif
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>

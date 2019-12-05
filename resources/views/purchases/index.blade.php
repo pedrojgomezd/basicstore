@@ -15,8 +15,8 @@
                                     <th>Description</th>
                                     <th>Amount</th>
                                     <th>Estatus</th>
-                                    <th>Payment</th>
                                     <th>Details</th>
+                                    <th>Payment</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -25,9 +25,20 @@
                                         <td>{{ $purchase->description }}</td>
                                         <td>{{ $purchase->amount_format }}</td>
                                         <td>{{ $purchase->status }}</td>
-                                        <td>Status</td>
                                         <td>
                                             <a href="{{ route('purchases.show', ['purchase' => $purchase]) }}">Details</a>
+                                        </td>
+                                        <td>
+                                            @if($purchase->status != 'PAYED')
+                                                <button class="btn btn-success" onclick="
+                                                    document.getElementById('form-pay').action = '{{ route('payments.process', ['purchase' => $purchase]) }}'
+                                                    document.getElementById('form-pay').submit()
+                                                ">
+                                                    Payment
+                                                </button>
+                                            @else
+                                                {{$purchase->status}}
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach

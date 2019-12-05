@@ -29,8 +29,7 @@ class PurchaseController extends Controller
     {
         $purchase = $request->user()->purchases()->create([
             'description' => 'Luxury pocket watch',
-            'amount'      => 1200000,
-            'status'      => 'CREATED'
+            'amount'      => 120000
         ]);
 
         return redirect()->route('purchases.show', ['purchase' => $purchase]);

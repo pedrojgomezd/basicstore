@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
 {
-    protected $redirectGuard = ['users' => '/home', 'customer' => 'car'];
+    protected $redirectGuard = ['users' => '/home', 'customer' => '/'];
     /**
      * Handle an incoming request.
      *
