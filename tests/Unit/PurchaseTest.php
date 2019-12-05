@@ -29,4 +29,11 @@ class PurchaseTest extends TestCase
 
         $this->assertEquals('$12.000,00', $purchase->amount_format);
     }
+
+    public function test_a_purchase_have__a_color_status()
+    {
+        $purchase = factory(Purchase::class)->make();
+
+        $this->assertEquals($purchase->status_color, 'bg-warning');
+    }
 }

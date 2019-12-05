@@ -18,4 +18,22 @@ class Purchase extends Model
         $format = number_format($this->amount, 2, ',', '.');
         return "$$format";
     }
+
+    public function getStatusColorAttribute()
+    {
+        switch ($this->status) {
+            case 'CREATED':
+                return 'bg-warning';
+                break;
+            case 'PAYED':
+                return 'bg-success';
+                break;
+            case 'REJECTED':
+                return 'bg-danger';
+                break;            
+            default:
+                return 'bg-default';
+                break;
+        }
+    }
 }
