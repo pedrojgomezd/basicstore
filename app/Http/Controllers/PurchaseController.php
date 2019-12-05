@@ -14,17 +14,9 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $purchases = auth()->user()->purchases;
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('purchases.index')->withPurchases($purchases);
     }
 
     /**
@@ -35,7 +27,14 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $purchase = $request->user()->purchases()->create([
+            'description' => 'Luxury pocket watch',
+            'amount'      => 1200000,
+            'status'      => 'CREATED'
+        ]);
+
+        return redirect()->route('purchases.show', ['purchase' => $purchase]);
+
     }
 
     /**
@@ -46,30 +45,7 @@ class PurchaseController extends Controller
      */
     public function show(Purchase $purchase)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Purchase  $purchase
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Purchase $purchase)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Purchase  $purchase
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Purchase $purchase)
-    {
-        //
+        return view('purchases.show')->withPurchase($purchase);
     }
 
     /**
@@ -80,6 +56,8 @@ class PurchaseController extends Controller
      */
     public function destroy(Purchase $purchase)
     {
-        //
+        $purchase->delete();
+
+        return redirect('/');
     }
 }

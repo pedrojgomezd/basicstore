@@ -20,4 +20,13 @@ class PurchaseTest extends TestCase
 
         $this->assertEquals($customer->toArray(), $purchase->customer->toArray());
     }
+
+    public function test_the_method_amount_format_return_whit_currency_format()
+    {
+        $purchase = factory(Purchase::class)->make([
+            'amount' => 12000
+        ]);
+
+        $this->assertEquals('$12.000,00', $purchase->amount_format);
+    }
 }

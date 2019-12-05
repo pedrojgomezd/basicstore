@@ -83,7 +83,21 @@
                 <div class="title m-b-md">
                     Welcome to Basic Store
                 </div>
+                <div>
+                    Los mejroes relojed e lbolita del mundo
+                </div>
+                <div>
+                    <button type="button" onclick="
+                       document.getElementsByTagName('form')[0].submit()
+                    ">
+                    COmprar
+                    </button>
+                </div>
             </div>
         </div>
+
+        <form action="{{ route('purchases.store')}}" method="POST">
+            @csrf
+        </form>
     </body>
 </html>

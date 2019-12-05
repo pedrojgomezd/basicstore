@@ -18,8 +18,8 @@ class CreatePurchasesTable extends Migration
             $table->unsignedBigInteger('customer_id');
             $table->string('description');
             $table->integer('amount');
-            $table->string('request_id')->index();
-            $table->string('process_url');
+            $table->string('request_id')->nullable();
+            $table->string('process_url')->nullable();
             $table->enum('status', ['CREATED', 'PAYED', 'REJECTED'])->default('CREATED');
             $table->timestamps();
 

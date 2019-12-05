@@ -12,4 +12,10 @@ class Purchase extends Model
     {
         return $this->belongsTo(Customer::class);
     }
+
+    public function getAmountFormatAttribute()
+    {
+        $format = number_format($this->amount, 2, ',', '.');
+        return "$$format";
+    }
 }
