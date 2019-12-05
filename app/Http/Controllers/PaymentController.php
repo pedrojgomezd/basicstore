@@ -25,7 +25,6 @@ class PaymentController extends Controller
                 'request_id' => $response->requestId(),
                 'process_url' => $response->processUrl()
             ]);
-
             return redirect($response->processUrl());
         }
     }

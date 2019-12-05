@@ -13,7 +13,7 @@
 
 Route::view('/','landing')->name('landing');
 
-Route::group(['middleware' => 'auth:customer'], function () {
+Route::group(['middleware' => 'auth.customer:customer'], function () {
     Route::get('purchases', 'PurchaseController@index')->name('purchases.index');
     Route::get('purchases/{purchase}', 'PurchaseController@show')->name('purchases.show');
     Route::post('purchases', 'PurchaseController@store')->name('purchases.store');

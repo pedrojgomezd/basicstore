@@ -14,7 +14,7 @@ class CustomerTest extends TestCase
     public function routesThatRequireTheUserNotToBeAuthenticatedProvider()
     {
         return [
-            ['register', 'landing'],
+            ['customer.register', 'landing'],
             ['customer.login', 'landing']
         ];
     }
