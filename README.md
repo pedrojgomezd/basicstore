@@ -1,4 +1,5 @@
 # Welcome to Basic Store
+## Demo [Basicstore](https://basicstore.herokuapp.com)
 ## Installation instruction
 
 #### Clone the repositories and install dependency
@@ -30,7 +31,7 @@ Migrations and the seeder must be executed, in order for an admin user to create
 ##### Customer
 
     Langind -> Button [I want it!]
-    	if (Login custmoer
+    	if (Login custmoer)
             purchase detail
         else
             Formulario de login o registro
@@ -54,10 +55,15 @@ Migrations and the seeder must be executed, in order for an admin user to create
 The routes of the application would look like this
 #### Customer Routes
 [Landing](http://localhos/)
+
 [Login](http://localhos/login)
+
 [Register](http://localhos/register)
+
 [Purcahses](http://localhos/purcahses)
+
 [Purcahses/{purchase}](http://localhos/purcahses/1)
+
 
 #### Admin Route
 [Login](http://localhos/admin/login)
